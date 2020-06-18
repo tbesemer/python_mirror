@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ ! -d /sonic_logs ]
+then
+    mkdir /sonic_logs
+fi 
+
+WGET_LOG=/sonic_logs/wget_log.txt
+
+echo "$@" >> $WGET_LOG
+wget.bin $@

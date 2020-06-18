@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ ! -d /sonic_logs ]
+then
+    mkdir /sonic_logs
+fi 
+
+GIT_CLONE_LOG=/sonic_logs/git_clone_log.txt
+
+echo "$@" >> $GIT_CLONE_LOG
+git.bin $@
